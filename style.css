@@ -277,6 +277,9 @@ footer { background: #0d2716; padding: 72px 32px 36px; }
 .use-cases span { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--green-tint); color: var(--green-dark); padding: 6px 12px; }
 .spec-note { font-size: 11.5px; color: var(--muted); font-style: italic; margin-bottom: 18px; }
 
+/* ── QUICK CONTACT CARDS (contact page) ── */
+.quick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
 /* ── TEAM CARDS (contact page) ── */
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .team-card { background: #fff; border: 1px solid var(--grey); padding: 26px 24px; }
@@ -288,7 +291,6 @@ footer { background: #0d2716; padding: 72px 32px 36px; }
 
 /* ── GENERIC CARD / GROUP HEADER (fleet groups) ── */
 .fleet-group-hd { display: flex; align-items: baseline; gap: 16px; margin: 64px 0 28px; }
-.fleet-group-hd:first-of-type { margin-top: 0; }
 .fleet-group-hd h3 { font-family: 'Archivo', sans-serif; font-size: 22px; font-weight: 800; color: var(--text); }
 .fleet-group-hd hr { flex: 1; border: none; border-top: 1px solid var(--grey); }
 
@@ -331,6 +333,7 @@ footer { background: #0d2716; padding: 72px 32px 36px; }
   .ft-top { grid-template-columns: 1fr 1fr; gap: 40px; }
   .gallery-grid { grid-template-columns: repeat(3,1fr); }
   .team-grid { grid-template-columns: repeat(2,1fr); }
+  .quick-grid { grid-template-columns: repeat(2,1fr); }
 }
 @media (max-width: 640px) {
   .nav-ctas .btn-out { display: none; }
@@ -345,6 +348,7 @@ footer { background: #0d2716; padding: 72px 32px 36px; }
   .gallery-grid { grid-template-columns: repeat(2,1fr); grid-auto-rows: 140px; }
   .gallery-grid .wide { grid-column: span 2; }
   .team-grid { grid-template-columns: 1fr; }
+  .quick-grid { grid-template-columns: 1fr; }
   .signup-band { flex-direction: column; align-items: flex-start; }
   .hero-btns { flex-direction: column; align-items: flex-start; }
 }
