@@ -1,5 +1,50 @@
 // Chimes Crane Hire — Mockup v3 shared behaviour
 
+// Splash screen (homepage entry only) + page-transition curtain reveal/cover
+const splash = document.getElementById('splash');
+const pageTrans = document.getElementById('pageTrans');
+
+function revealCurtain() {
+  if (!pageTrans) return;
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    pageTrans.style.transform = 'translateY(-100%)';
+  }));
+}
+
+if (splash) {
+  window.addEventListener('load', () => {
+    setTimeout(() => { splash.classList.add('hide'); revealCurtain(); }, 850);
+  });
+} else {
+  revealCurtain();
+}
+
+if (pageTrans) {
+  document.querySelectorAll('a[href]').forEach((a) => {
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || a.target === '_blank') return;
+    const dest = new URL(href, window.location.href);
+    if (dest.pathname === window.location.pathname) return; // same-page anchor, let browser scroll
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      pageTrans.style.transition = 'none';
+      pageTrans.style.transform = 'translateY(100%)';
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        pageTrans.style.transition = 'transform .5s cubic-bezier(.76,0,.24,1)';
+        pageTrans.style.transform = 'translateY(0)';
+      }));
+      setTimeout(() => { window.location.href = href; }, 480);
+    });
+  });
+}
+
+// Back to top
+const totop = document.getElementById('totop');
+if (totop) {
+  window.addEventListener('scroll', () => totop.classList.toggle('show', scrollY > 700));
+  totop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
 // Header shadow on scroll
 const hdr = document.getElementById('hdr');
 if (hdr) window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 20));
@@ -42,6 +87,29 @@ const sio = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('.stat-n[data-to]').forEach(el => sio.observe(el));
+
+// Industries clickable list + preview panel
+function setIndustry(key) {
+  document.querySelectorAll('.ind-li').forEach(el => el.classList.toggle('active', el.dataset.ind === key));
+  document.querySelectorAll('.ind-panel-ico').forEach(el => el.classList.toggle('active', el.dataset.ind === key));
+  document.querySelectorAll('.ind-panel-txt').forEach(el => el.classList.toggle('active', el.dataset.ind === key));
+}
+document.querySelectorAll('.ind-li').forEach(li => {
+  li.addEventListener('click', () => setIndustry(li.dataset.ind));
+  li.addEventListener('mouseenter', () => setIndustry(li.dataset.ind));
+});
+
+// Testimonial carousel
+const testiSlides = document.querySelectorAll('.testi-slide');
+const testiCount = document.getElementById('testiCount');
+let testiIdx = 0;
+function showTesti(i) {
+  testiIdx = (i + testiSlides.length) % testiSlides.length;
+  testiSlides.forEach((s, idx) => s.classList.toggle('active', idx === testiIdx));
+  if (testiCount) testiCount.textContent = String(testiIdx + 1).padStart(2, '0') + ' / ' + String(testiSlides.length).padStart(2, '0');
+}
+document.getElementById('testiNext')?.addEventListener('click', () => showTesti(testiIdx + 1));
+document.getElementById('testiPrev')?.addEventListener('click', () => showTesti(testiIdx - 1));
 
 // Fleet spec modal
 function openModal(id) {
