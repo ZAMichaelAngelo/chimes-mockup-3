@@ -4,7 +4,6 @@
   --green-dark: #5C9929;
   --green-tint: #eef6f0;
   --navy: #083868;
-  --yellow: #FFB400;
   --white: #ffffff;
   --off-white: #f6f8f6;
   --grey: #e4e9e4;
@@ -138,8 +137,7 @@ button { border-radius: 0; font-family: inherit; }
 .fl-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(8,56,104,.14); }
 .fl-img { height: 190px; background-size: cover; background-position: center; position: relative; }
 .fl-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,56,104,.6) 0%, transparent 55%); }
-.fl-tag { position: absolute; bottom: 10px; left: 10px; z-index: 1; background: var(--yellow); color: var(--navy); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 9px; }
-.fl-tag.new { background: var(--green); color: #fff; }
+.fl-tag { position: absolute; bottom: 10px; left: 10px; z-index: 1; background: var(--green); color: var(--navy); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 9px; }
 .fl-body { padding: 18px 20px 22px; }
 .fl-body h3 { font-family: 'Archivo', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 3px; }
 .fl-cap { font-size: 12px; font-weight: 700; color: var(--green-dark); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
@@ -210,9 +208,9 @@ button { border-radius: 0; font-family: inherit; }
 .about-txt h2 { font-family: 'Archivo', sans-serif; font-size: clamp(28px, 3.6vw, 50px); font-weight: 900; letter-spacing: -.01em; color: #fff; line-height: 1.04; margin-bottom: 18px; }
 .about-txt p { font-size: 15px; color: rgba(255,255,255,.78); line-height: 1.8; margin-bottom: 16px; }
 .vals { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 26px 0 34px; }
-.vals li { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; background: var(--yellow); color: var(--navy); padding: 6px 13px; }
-.btn-grn { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 13px 28px; background: var(--yellow); color: var(--navy); text-decoration: none; transition: background .2s; }
-.btn-grn:hover { background: #ffc733; }
+.vals li { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; background: var(--green); color: var(--navy); padding: 6px 13px; }
+.btn-grn { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 13px 28px; background: var(--green); color: var(--navy); text-decoration: none; transition: background .2s; }
+.btn-grn:hover { background: var(--green-dark); color: #fff; }
 .bee { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; border: 1px solid rgba(255,255,255,.18); padding: 8px 16px; }
 .bee span { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); }
 .about-img { position: relative; }
@@ -319,7 +317,7 @@ footer { background: var(--navy); padding: 72px 32px 36px; }
   position: absolute; top: 16px; right: 16px; z-index: 2; width: 36px; height: 36px; border-radius: 50%;
   background: rgba(255,255,255,.92); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
 }
-.modal-tag { position: absolute; bottom: 14px; left: 22px; z-index: 1; background: var(--yellow); color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 11px; }
+.modal-tag { position: absolute; bottom: 14px; left: 22px; z-index: 1; background: var(--green); color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 11px; }
 .modal-body { padding: 30px 34px 38px; }
 .modal-body h3 { font-family: 'Archivo', sans-serif; font-size: 26px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
 .modal-cap { font-size: 13px; font-weight: 700; color: var(--green-dark); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 18px; }
