@@ -8,6 +8,8 @@
   --yellow: #FFB400;
   --green-new: #78B838;
   --green-new-dark: #669c30;
+  --navy-new: #083868;
+  --green-new-deep: #18250B;
   --white: #ffffff;
   --off-white: #f6f8f6;
   --grey: #e4e9e4;
@@ -248,21 +250,21 @@ button { border-radius: 0; font-family: inherit; }
 .btn-sub:hover { background: #0c3a1a; }
 
 /* ── FOOTER ── */
-footer { background: #0d2716; padding: 72px 32px 36px; }
+footer { background: var(--green-new-deep); padding: 72px 32px 36px; }
 .ft-inner { max-width: 1380px; margin: 0 auto; }
 .ft-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; margin-bottom: 56px; }
 .ft-brand img { height: 32px; margin-bottom: 18px; filter: brightness(0) invert(1); }
 .ft-brand p { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.7; margin-bottom: 22px; max-width: 260px; }
 .ft-social { display: flex; gap: 10px; }
 .ft-social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.2); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.5); text-decoration: none; transition: all .2s; }
-.ft-social a:hover { border-color: var(--yellow); color: var(--yellow); }
+.ft-social a:hover { border-color: var(--navy-new); color: var(--navy-new); }
 .ft-col h5 { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.38); margin-bottom: 18px; }
 .ft-col ul { list-style: none; }
 .ft-col li { margin-bottom: 9px; }
 .ft-col a { font-size: 13px; color: rgba(255,255,255,.62); text-decoration: none; transition: color .2s; }
 .ft-col a:hover { color: #fff; }
 .ft-ci { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 11px; }
-.ft-ci svg { flex-shrink: 0; color: var(--yellow); margin-top: 1px; }
+.ft-ci svg { flex-shrink: 0; color: var(--navy-new); margin-top: 1px; }
 .ft-ci span { font-size: 13px; color: rgba(255,255,255,.62); line-height: 1.5; }
 .ft-bot { border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; display: flex; align-items: center; justify-content: space-between; }
 .ft-bot p { font-size: 12px; color: rgba(255,255,255,.32); }
