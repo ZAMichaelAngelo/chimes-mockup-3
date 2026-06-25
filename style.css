@@ -281,7 +281,7 @@ footer { background: #0d2716; padding: 72px 32px 36px; }
 
 /* ── PAGE TRANSITION (curtain wipe) ── */
 #pageTrans {
-  position: fixed; inset: 0; z-index: 2500; background: var(--green-deep);
+  position: fixed; inset: 0; z-index: 2500; background: var(--green-new);
   transform: translateY(0); pointer-events: none;
   transition: transform .5s cubic-bezier(.76,0,.24,1);
 }
